@@ -30,3 +30,4 @@ Route::middleware([
 });
 Route::get('/Doctors_Information_view',[AdminController::class,'doctors_info']);
 Route::post('/upload_doctor',[AdminController::class,'upload']);
+Route::post('/patients_info',[HomeController::class,'patients_info']);

@@ -111,7 +111,18 @@
       </div> <!-- .container -->
     </nav>
   </header>
-  
+
+  @if(session()->has('message'))
+  <div class="alert alert-success">
+    <button type="button" class="close" data-dismiss="alert">
+      x
+</button>
+{{session()->get('message')}}
+</div>  
+@endif
+<!-- message returns to the board -->
+
+
   <!Slide Show>
         <div>
           <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
