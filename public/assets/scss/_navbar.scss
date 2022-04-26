@@ -23,7 +23,7 @@
       width: 55px;
     }
     .navbar-brand {
-      color: lighten($gray-dark, 20%);
+      color: lighten($AC7D88, 20%);
       font-size: 1.5rem;
       line-height: 48px;
       margin-right: 0;
@@ -33,7 +33,7 @@
       &:active,
       &:focus,
       &:hover {
-        color: lighten($gray-dark, 10%);
+        color: lighten($AC7D88, 10%);
       }
 
       img {
@@ -79,7 +79,7 @@
     }
     .navbar-toggler {
       border: 0;
-      color: $text-muted;
+      color:$text-muted;
       height: $navbar-height;
       &:focus {
         box-shadow: none

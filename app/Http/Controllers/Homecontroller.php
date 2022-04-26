@@ -55,10 +55,23 @@ public function patients_info(Request $request)
         
     
     $data->user_id=Auth::user()->id;
+    
     }
     $data->save();
-    return redirect()->back()->with('message','Patients information has been taken');
+
+  return view('user.patients_info');
+    return redirect()->back('user.patients_info')->with('message','Patients information has been taken');
+  
+
+  
+    
+} 
+public function myappointment(){
+    return view('user.my_appointment');
 }
+ 
 }
+
+
 
 

@@ -29,5 +29,10 @@ Route::middleware([
     })->name('dashboard');
 });
 Route::get('/Doctors_Information_view',[AdminController::class,'doctors_info']);
+
 Route::post('/upload_doctor',[AdminController::class,'upload']);
+
 Route::post('/patients_info',[HomeController::class,'patients_info']);
+
+Route::get('/myappointment',[HomeController::class,'myappointment']);
+Route::get('/patients_info',[HomeController::class,'patients_info']);

@@ -25,7 +25,7 @@
 </head>
 <body>
 
-  <!-- Back to top button -->
+  <!-- Back to top button -->    
   <div class="back-to-top"></div>
 
   <header>
@@ -36,7 +36,7 @@
             <div class="site-info">
               <a href="#"><span class="mai-call text-primary"></span> +00 123 4455 6666</a>
               <span class="divider">|</span>
-              <a href="#"><span class="mai-mail text-primary"></span> mail@example.com</a>
+              <a href="#"><span class="mai-mail text-primary " style="background-color:#7F525D;color:white;"></span> mail@example.com</a>
             </div>
           </div>
           <div class="col-sm-4 text-right text-sm">
@@ -51,10 +51,9 @@
       </div> <!-- .container -->
     </div> <!-- .topbar -->
 
-    <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm" style="background-color:#6D7B8D;color:white;">
       <div class="container">
-        <a class="navbar-brand" href="#"><span class="text-primary">Covid</span>-Care</a>
-
+        <a class="navbar-brand"  href="#"><span class="text-primary" style="color:#7F525D;" >Covid</span>-Care</a>
         <form action="#">
           <div class="input-group input-navbar">
             <div class="input-group-prepend">
@@ -70,36 +69,39 @@
 
         <div class="collapse navbar-collapse" id="navbarSupport">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home</a>
+            <li class="nav-item active ">
+              <a class="nav-link" style="color:white;" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.html">Available Hospital</a>
+              <a class="nav-link" style="color:white;"href="about.html">Available Hospital</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="doctors.html">Medical Services</a>
+              <a class="nav-link"style="color:white;" href="doctors.html">Medical Services</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="blog.html">Patients Info</a>
+              <a class="nav-link"  style="color:white;"href="{{url('patients_info')}}">Patients Info</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
+              <a class="nav-link" style="color:white;" href="contact.html">Contact</a>
             </li>
             <!-- Authentication -->
             @if(Route::has('login'))
 
             @auth 
+            <li class="nav-item">
+    <a class="nav-link" style="background-color:#34282C;color:white;" href="{{url('myappointment')}}">My Appointment</a>
+            </li>
             <x-app-layout>
              </x-app-layout>
-  
+  s
              
 
               @else
             <li class="nav-item">
-              <a class="btn btn-primary ml-lg-3" href="{{route('login')}}">Sign In  </a>
+              <a class="btn btn-primary ml-lg-3"  style="background-color:#7F525D;color:white;" href="{{route('login')}}">Sign In  </a>
             </li>
             <li class="nav-item">
-              <a class="btn btn-primary ml-lg-3" href="{{route('register')}}">Sign Up </a>
+              <a class="btn btn-primary ml-lg-3"  style="background-color:#7F525D;color:white;" href="{{route('register')}}">Sign Up </a>
             </li>
               @endauth
               @endif
@@ -123,7 +125,7 @@
 <!-- message returns to the board -->
 
 
-  <!Slide Show>
+  <!-- slide show -->
         <div>
           <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
@@ -242,7 +244,42 @@
 @include('user.doctor')
 
 
-  @include('user.appointment')
+<div>
+              <h2 class="text_header">Digital Health</h2>
+              <div class="health container-fluid">
+                <div class="row">
+                  <div class="health_tips col-lg-6">
+                    <h3>Virtual Urgent Care</h3>
+                    <ul>
+                      <li style="align:center;">Convinient hours</li>
+                      </li>
+                      <ul>
+                        <li>
+                          8.00 am-midnight
+                        </li>
+                      </ul>
+                      <li style="align:middle">
+                        Expert Care
+                      </li>
+                      <ul>
+                        <li>
+                          Top most Specialists
+                        </li>
+                      </ul>
+                      <li style="align:center;">Prescriptions</li>
+                      <ul>
+                        <li>
+                          near to your pharmacy
+                        </li>
+                      </ul>
+                    </ul>
+                  </div>
+                  <div class="col-lg-6">
+                    <img src="patient.png" class="virtual_urgent rounded mx-auto d-block" alt="...">
+                  </div>
+                </div>
+              </div>
+            </div>
   @include('user.latest')
 
   
