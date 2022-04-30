@@ -63,6 +63,16 @@
                 <i class="mdi mdi-file-document-box"></i>
               </span>
               <span class="menu-title">Doctors Information</span>
+              
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{url('medical_services_view')}}">
+              <span class="menu-icon">
+                <i class="mdi mdi-file-document-box"></i>
+              </span>
+              
+              <span class="menu-title">Medical_services</span>
             </a>
           </li>
         </ul>

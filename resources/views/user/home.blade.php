@@ -76,7 +76,7 @@
               <a class="nav-link" style="color:white;"href="about.html">Available Hospital</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link"style="color:white;" href="doctors.html">Medical Services</a>
+              <a class="nav-link"style="color:white;" href="{{url('medical_services')}}">Medical Services</a>
             </li>
             <li class="nav-item">
               <a class="nav-link"  style="color:white;"href="{{url('patients_info')}}">Patients Info</a>
@@ -93,7 +93,7 @@
             </li>
             <x-app-layout>
              </x-app-layout>
-  s
+  
              
 
               @else
@@ -241,11 +241,13 @@
     </div> <!-- .bg-light -->
   <!-- .bg-light -->
 
-@include('user.doctor')
 
 
-<div>
-              <h2 class="text_header">Digital Health</h2>
+<div class="page-section">
+    <div class="container">
+      <h1 class="text-center mb-5 wow fadeInUp">Digital Health</h1>
+
+             
               <div class="health container-fluid">
                 <div class="row">
                   <div class="health_tips col-lg-6">
@@ -280,6 +282,7 @@
                 </div>
               </div>
             </div>
+</div>
   @include('user.latest')
 
   

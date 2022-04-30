@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>my_appointment</title>
-</head>
-<body>
-    <h1>Show my appointment
-</body>
-</html>
+
 
 
 
@@ -23,7 +12,7 @@
 
   <meta name="copyright" content="MACode ID, https://macodeid.com/">
 
-  <title>Available Covid Hospital Management</title>
+  <title>Medical services</title>
 
   <link rel="stylesheet" href="../assets/css/maicons.css">
 
@@ -65,7 +54,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light shadow-sm" style="background-color:#6D7B8D;color:white;">
       <div class="container">
-        <a class="navbar-brand" href="#"><span class="text-primary">Covid</span>-Care</a>
+        <a class="navbar-brand" href="#"><span class="text-primary" style="color:white;">Covid</span>-Care</a>
 
         <form action="#">
           <div class="input-group input-navbar">
@@ -83,54 +72,85 @@
         <div class="collapse navbar-collapse" id="navbarSupport">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home</a>
+              <a class="nav-link" style="color:white;"href="{{url('home')}}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.html">Available Hospital</a>
+              <a class="nav-link" style="color:white;" href="about.html">Available Hospital</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="doctors.html">Medical Services</a>
+              <a class="nav-link"style="color:white;" href="{{url('medical_services')}}">Medical Services</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="blog.html">Patients Info</a>
+              <a class="nav-link"style="color:white;" href="{{url('patients_info')}}">Patients Info</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
+              <a class="nav-link" style="color:white;" href="contact.html">Contact</a>
             </li>
             <!-- Authentication -->
             @if(Route::has('login'))
 
-            @auth 
-            <li class="nav-item">
-    <a class="nav-link" style="background-color:#34282C;color:white;" href="{{url('myappointment')}}">My Appointment</a>
-            </li>
-            <x-app-layout>
-             </x-app-layout>
-  
-             
+@auth 
 
-              @else
-            <li class="nav-item">
-              <a class="btn btn-primary ml-lg-3" href="{{route('login')}}">Sign In  </a>
-            </li>
-            <li class="nav-item">
-              <a class="btn btn-primary ml-lg-3" href="{{route('register')}}">Sign Up </a>
-            </li>
-              @endauth
-              @endif
-          <!-- Authentication done -->
+<x-app-layout>
+ </x-app-layout>
+
+ 
+
+  @else
+<li class="nav-item">
+  <a class="btn btn-primary ml-lg-3"  style="background-color:#7F525D;color:white;" href="{{route('login')}}">Sign In  </a>
+</li>
+<li class="nav-item">
+  <a class="btn btn-primary ml-lg-3"  style="background-color:#7F525D;color:white;" href="{{route('register')}}">Sign Up </a>
+</li>
+  @endauth
+  @endif
+<!-- Authentication done -->
 
 
-          </ul>
-        </div> <!-- .navbar-collapse -->
-      </div> <!-- .container -->
-    </nav>
-  </header>
+</ul>
+</div> <!-- .navbar-collapse -->
+</div> <!-- .container -->
+</nav>
+</header>
 <div>
-    <table>
-        <tr>
-            <th>Doctor name</
+<table class="table table-hover" >
+
+
+
+    </div>
+  </div>
+
+<thead>
+    <tr>
+      <th scope="col">Serial no</th>
+      <th scope="col">Hospital name</th>
+      <th scope="col">providable services</th>
+      <th scope="col">Covid Specialists</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2"></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
 </div>
+
  
 <script src="../assets/js/jquery-3.5.1.min.js"></script>
 

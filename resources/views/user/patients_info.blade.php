@@ -77,7 +77,7 @@
               <a class="nav-link" style="color:white;"href="about.html">Available Hospital</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link"style="color:white;" href="doctors.html">Medical Services</a>
+              <a class="nav-link"style="color:white;" href="{{url('patients_info')}}">Medical Services</a>
             </li>
             <li class="nav-item">
               <a class="nav-link"  style="color:white;"href="{{url('patients_info')}}">Patients Info</a>

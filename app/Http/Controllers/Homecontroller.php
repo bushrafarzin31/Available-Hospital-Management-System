@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\doctor;
 use App\Models\Patients_info;
+use App\Models\Medical_services;
 
 
 class Homecontroller extends Controller
@@ -70,8 +71,13 @@ public function myappointment(){
     return view('user.my_appointment');
 }
  
-}
+public function medical_services(){
+  
+    
 
+   return view('user.medical_services');
+}
+}
 
 
 
