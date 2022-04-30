@@ -37,7 +37,7 @@ Route::post('/patients_info',[HomeController::class,'patients_info']);
 
 Route::get('/myappointment',[HomeController::class,'myappointment']);
 Route::get('/patients_info',[HomeController::class,'patients_info']);
-Route::get('/medical_services',[HomeController::class,'medical_services']);
+
 Route::get('/medical_services_view',[AdminController::class,'medical_services']);
 Route::post('/upload_1_medical_services',[AdminController::class,'upload_1']);
-
+Route::get('/medical_services',[HomeController::class,'show']);

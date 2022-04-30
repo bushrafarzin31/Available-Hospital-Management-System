@@ -123,31 +123,21 @@
 
 <thead>
     <tr>
-      <th scope="col">Serial no</th>
+      
       <th scope="col">Hospital name</th>
-      <th scope="col">providable services</th>
+      <th scope="col">Providable services</th>
       <th scope="col">Covid Specialists</th>
     </tr>
   </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td></td>
-      <td></td>
-      <td></td>
+  @foreach($medical_services as  $medical_services)
+  <tr>
+      
+      <td scope="col">{{$medical_services['Hospital_name']}}</td>
+      <td scope="col">{{$medical_services['Providable_services']}}</td>
+      <td scope="col"><a class="nav-link" href="{{url('doctors')}}">{{$medical_services['Covid_specialists']}}</td></a>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2"></td>
-      <td></td>
-    </tr>
-  </tbody>
+ 
+  @endforeach
 </table>
 </div>
 

@@ -8,6 +8,9 @@
           <div class="card-doctor">
             <div class="header">
               <img height="300 px" src="doctorimage/{{$doctors->image}}" alt="">
+              <li class="nav-item">
+              <a class="nav-link"style="color:white;" href="{{url('medical_services')}}">Medical Services</a>
+            </li>
               <div class="meta">
                 <a href="#"><span class="mai-call"></span></a>
                 <a href="#"><span class="mai-logo-whatsapp"></span></a>

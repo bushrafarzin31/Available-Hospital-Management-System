@@ -71,12 +71,13 @@ public function myappointment(){
     return view('user.my_appointment');
 }
  
-public function medical_services(){
+public function show(){
   
-    
+    $data=Medical_services::all();
 
-   return view('user.medical_services');
+   return view('user.medical_services',['medical_services'=>$data]);
 }
+
 }
 
 
