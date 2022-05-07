@@ -1,7 +1,3 @@
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -114,7 +110,7 @@
 </nav>
 </header>
 <div>
-<table class="table table-hover" >
+<table class="table table-hover" border:1 >
 
 
 
@@ -126,7 +122,7 @@
       
       <th scope="col">Hospital name</th>
       <th scope="col">Providable services</th>
-      <th scope="col">Covid Specialists</th>
+      <th scope="col"><a class="nav-link" href="{{url('doctor')}}">Covid Specialists</th></a>
     </tr>
   </thead>
   @foreach($medical_services as  $medical_services)
@@ -134,7 +130,7 @@
       
       <td scope="col">{{$medical_services['Hospital_name']}}</td>
       <td scope="col">{{$medical_services['Providable_services']}}</td>
-      <td scope="col"><a class="nav-link" href="{{url('doctors')}}">{{$medical_services['Covid_specialists']}}</td></a>
+      <td scope="col">{{$medical_services['Covid_specialists']}}</td>
     </tr>
  
   @endforeach

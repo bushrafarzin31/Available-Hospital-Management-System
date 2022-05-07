@@ -35,9 +35,31 @@ Route::post('/upload_doctor',[AdminController::class,'upload']);
 
 Route::post('/patients_info',[HomeController::class,'patients_info']);
 
-Route::get('/myappointment',[HomeController::class,'myappointment']);
+
 Route::get('/patients_info',[HomeController::class,'patients_info']);
 
 Route::get('/medical_services_view',[AdminController::class,'medical_services']);
+
 Route::post('/upload_1_medical_services',[AdminController::class,'upload_1']);
+
 Route::get('/medical_services',[HomeController::class,'show']);
+
+Route::get('/doctor',[HomeController::class,'show_1']);
+
+Route::get('/myappointment',[HomeController::class,'myappointment']);
+
+Route::get('/cancel_appoint/{id}',[HomeController::class,'cancel_appoint']);
+
+Route::get('/showappointment',[AdminController::class,'showappointment']);
+
+Route::get('/deletedoctor/{id}',[AdminController::class,'deletedoctor']);
+
+Route::get('/updatedoctor/{id}',[AdminController::class,'updatedoctor']);
+
+Route::post ('/editdoctor/{id}',[AdminController::class,'editdoctor']);
+
+Route::get('/available_view',[AdminController::class,'available']);
+
+Route::post('/upload_2_available',[AdminController::class,'upload_2']);
+
+Route::get('/available_hospital',[HomeController::class,'show_3']);

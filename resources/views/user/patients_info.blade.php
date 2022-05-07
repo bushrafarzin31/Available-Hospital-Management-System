@@ -136,12 +136,32 @@
           <div class="col-12 col-sm-6 py-2 wow fadeInRight">
             <input type="text" name="email"class="form-control" placeholder="Email address..">
           </div>
+
+          <div class="col-12 col-sm-6 py-2 wow fadeInRight" data-wow-delay="300ms">
+          <select name="doctor" id="department" class="custom-select">
+            <option>---select doctor--</option>
+            @foreach($doctor as $doctors)
+            <option value="{{$doctors->name}}">{{$doctors->name}}---speciality--{{$doctors->speciality}}
+
+            </option>
+
+
+              @endforeach
+</select>
+</div>
+
+
           <div class="col-12 col-sm-6 py-2 wow fadeInLeft" data-wow-delay="300ms">
             <input type="date" name="date"class="form-control">
           </div>
-          <div class="col-12 col-sm-6 py-2 wow fadeInRight" data-wow-delay="300ms">
-          
-          </div><div class="col-12 py-2 wow fadeInUp" data-wow-delay="300ms">
+         
+
+
+
+
+
+
+          <div class="col-12 py-2 wow fadeInUp" data-wow-delay="300ms">
             <input type="text"name="number" class="form-control" placeholder="Number..">
           </div>
           <div class="col-12 py-2 wow fadeInUp" data-wow-delay="300ms">
@@ -149,7 +169,7 @@
           </div>
         </div>
 
-        <button type="submit" class="btn btn-primary mt-3 wow zoomIn">Submit Request</button>
+        <button type="submit" class="btn btn-primary mt-3 wow zoomIn">Submit Request & get appointment</button>
       </form>
     </div>
   </div> <!-- .page-section -->

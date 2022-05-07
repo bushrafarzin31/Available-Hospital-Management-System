@@ -73,7 +73,7 @@
               <a class="nav-link" style="color:white;" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" style="color:white;"href="about.html">Available Hospital</a>
+              <a class="nav-link" style="color:white;"href="{{url('available_hospital')}}">Available Hospital</a>
             </li>
             <li class="nav-item">
               <a class="nav-link"style="color:white;" href="{{url('medical_services')}}">Medical Services</a>
@@ -283,6 +283,8 @@
               </div>
             </div>
 </div>
+@include('user.doctor')
+@include('user.patients_info')
   @include('user.latest')
 
   
