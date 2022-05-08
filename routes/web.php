@@ -63,3 +63,18 @@ Route::get('/available_view',[AdminController::class,'available']);
 Route::post('/upload_2_available',[AdminController::class,'upload_2']);
 
 Route::get('/available_hospital',[HomeController::class,'show_3']);
+Route::get('/showhospital',[AdminController::class,'showhospital']);
+
+Route::get('/deletehospital/{id}',[AdminController::class,'deletehospital']);
+
+Route::get('/updatehospital/{id}',[AdminController::class,'updatehospital']);
+
+Route::post ('/edithospital/{id}',[AdminController::class,'edithospital']);
+
+Route::get('/showservice',[AdminController::class,'showservice']);
+
+Route::get('/deleteservice/{id}',[AdminController::class,'deleteservice']);
+
+Route::get('/updateservice/{id}',[AdminController::class,'updateservice']);
+
+Route::post ('/editservice/{id}',[AdminController::class,'editservice']);

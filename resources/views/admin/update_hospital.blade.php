@@ -50,35 +50,35 @@
           <div class="container" align="center" style="padding:100px" >
          
          
-          <form action="{{url('editdoctor',$data->id)}}" method="POST" enctype="multipart/form-data" >
+          <form action="{{url('edithospital',$data->id)}}" method="POST" enctype="multipart/form-data" >
 
             @csrf
 
             <div style="padding:15px;">
-              <label>Doctor Name</label>
-              <input type="text" style="color:black" name="name" value="{{$data->name}}">
+              <label>Hospital Name</label>
+              <input type="text" style="color:black" name="Available_hospital" value="{{$data->Available_hospital}}">
 </div>
 
 <div style="padding:15px;">
-              <label>Phone</label>
-              <input type="number" style="color:black"  name="phone" value="{{$data->phone}}">
+              <label>Location</label>
+              <input type="text" style="color:black"  name="Location" value="{{$data->Location}}">
 </div>
 
 <div style="padding:15px;">
-              <label>Speciality</label>
-              <input type="text" style="color:black" name="speciality" value="{{$data->speciality}}">
+              <label>Vacant_beds</label>
+              <input type="text" style="color:black" name="Vacant_isolation_beds" value="{{$data->Vacant_isolation_beds}}">
 </div>
 <div style="padding:15px;">
-              <label>Doctor image</label>
-             <img height=150 width=150 src="doctorimage/{{$data->image}}"> value="{{$data->image}}"
+              <label>Providable_cylinders</label>
+              <input type="text" style="color:black" name="Providable_oxygen_cylinder" value="{{$data->Providable_oxygen_cylinder}}">
+</div>
+<div style="padding:15px;">
+              <label>Ventilators & Icu</label>
+              <input type="text" style="color:black" name="Available_ventilator_ICU_beds" value="{{$data->Available_ventilator_ICU_beds}}">
 </div>
 
-<div>
-<label>Change Image</label>
 
-<input type="file" name="file">
 
-  </div>
   <div style="padding:15px;">
 
   <input type="submit" class="btn btn-primary">

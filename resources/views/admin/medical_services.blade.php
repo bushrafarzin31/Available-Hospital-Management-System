@@ -56,6 +56,10 @@
             
             <input type="text" style="color:black" name="Hospital_name" class="form-control" placeholder="Hospital Name">
           </div>
+          <div class="col-12 col-sm-6 py-2 wow fadeInLeft">
+            
+            <input type="number" style="color:black" name="Contact_number" class="form-control" placeholder="Contact number">
+          </div>
           <div class="col-12 col-sm-6 py-2 wow fadeInRight">
             <input type="text" style="color:black" name="Providable_services" class="form-control" placeholder="Services">
           </div>

@@ -46,7 +46,9 @@ return redirect()->back();
       
       
       $medical_services->Hospital_name=$request->Hospital_name;
-      $medical_services ->Providable_services=$request->Providable_services;
+       
+      $medical_services->Hospital_name=$request->Hospital_name;
+      $medical_services ->Contact_number=$request->Contact_number;
       $medical_services->Covid_specialists=$request->Covid_specialists;
       $medical_services->status='In progress';
       $medical_services->save();
@@ -108,4 +110,64 @@ public function available()
       $available->save();
       return redirect()->back();
 }
+public function showhospital() 
+{  
+   $data=available::all();
+   return view('admin.showhospital',compact('data'));
+    
+}
+public function deletehospital($id) {
+   $data=available::find($id);
+   $data->delete();
+   return redirect()->back();
+   }
+   public function updatehospital($id) {
+      $data = available::find($id);
+   
+      return view('admin.update_hospital',compact('data'));
+   }
+
+   public function edithospital(Request $request , $id){
+
+      $available= available::find($id);
+      $available->Available_hospital=$request->Available_hospital;
+      $available->Location=$request->Location;
+      $available->Vacant_isolation_beds=$request->Vacant_isolation_beds;
+      $available->Providable_oxygen_cylinder=$request->Providable_oxygen_cylinder;
+      $available->Available_ventilator_ICU_beds=$request->Available_ventilator_ICU_beds;
+      $available->save();
+      return redirect()->back();
+   }
+   public function showservice() 
+   {  
+      $data=medical_services::all();
+      return view('admin.showservice',compact('data'));
+       
+   }
+
+   public function deleteservice($id) {
+      $data=medical_services::find($id);
+      $data->delete();
+      return redirect()->back();
+      }
+
+      public function updateservice($id) {
+         $data =medical_services::find($id);
+      
+         return view('admin.update_service',compact('data'));
+      }
+
+
+      public function editservice(Request $request , $id){
+
+         $service= medical_services::find($id);
+         $service->Hospital_name=$request->Hospital_name;
+         $service->Contact_number=$request->Contact_number;
+         $service->Covid_specialists=$request->Covid_specialists;
+         $service->Providable_services=$request->Providable_services;
+        
+         $service->save();
+         return redirect()->back();
+      }
+
 }

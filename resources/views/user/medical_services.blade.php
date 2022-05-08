@@ -121,7 +121,9 @@
     <tr>
       
       <th scope="col">Hospital name</th>
+      <th scope="col">Contact-number</th>
       <th scope="col">Providable services</th>
+      
       <th scope="col"><a class="nav-link" href="{{url('doctor')}}">Covid Specialists</th></a>
     </tr>
   </thead>
@@ -129,6 +131,7 @@
   <tr>
       
       <td scope="col">{{$medical_services['Hospital_name']}}</td>
+      <td scope="col">{{$medical_services['Contact_number']}}</td>
       <td scope="col">{{$medical_services['Providable_services']}}</td>
       <td scope="col">{{$medical_services['Covid_specialists']}}</td>
     </tr>

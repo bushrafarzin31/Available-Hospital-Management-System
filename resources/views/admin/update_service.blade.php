@@ -50,35 +50,32 @@
           <div class="container" align="center" style="padding:100px" >
          
          
-          <form action="{{url('editdoctor',$data->id)}}" method="POST" enctype="multipart/form-data" >
+          <form action="{{url('editservice',$data->id)}}" method="POST" enctype="multipart/form-data" >
 
             @csrf
 
             <div style="padding:15px;">
-              <label>Doctor Name</label>
-              <input type="text" style="color:black" name="name" value="{{$data->name}}">
+              <label>Hospital Name</label>
+              <input type="text" style="color:black" name="Hospital_name" value="{{$data->Hospital_name}}">
 </div>
 
 <div style="padding:15px;">
-              <label>Phone</label>
-              <input type="number" style="color:black"  name="phone" value="{{$data->phone}}">
+              <label>Contact number</label>
+              <input type="text" style="color:black"  name="Contact_number" value="{{$data->Contact_number}}">
 </div>
 
 <div style="padding:15px;">
-              <label>Speciality</label>
-              <input type="text" style="color:black" name="speciality" value="{{$data->speciality}}">
+              <label>Services</label>
+              <input type="text" style="color:black" name="Providable_services" value="{{$data->Providable_services}}">
 </div>
 <div style="padding:15px;">
-              <label>Doctor image</label>
-             <img height=150 width=150 src="doctorimage/{{$data->image}}"> value="{{$data->image}}"
+              <label>Doctors</label>
+              <input type="text" style="color:black" name="Covid_specialists" value="{{$data->Covid_specialists}}">
 </div>
 
-<div>
-<label>Change Image</label>
 
-<input type="file" name="file">
 
-  </div>
+
   <div style="padding:15px;">
 
   <input type="submit" class="btn btn-primary">
