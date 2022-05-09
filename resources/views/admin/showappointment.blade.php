@@ -7,7 +7,7 @@
   <body>
     <div class="container-scroller">
       <div class="row p-0 m-0 proBanner" id="proBanner">
-        <div class="col-md-12 p-0 m-0">
+        <div -md-12 p-0 m-0">
           <div class="card-body card-body-padding d-flex align-items-center justify-content-between">
             <div class="ps-lg-1">
               <div class="d-flex align-items-center justify-content-between">
@@ -40,40 +40,49 @@
                
        <div class="container-fluid page-body-wrapper">
     
-       <div  align="center" style="padding-top:200px;"  >
-<table class= "table table-dark table-striped"   >
+       <div  align="left" style="padding-top:100px;padding-right:50px;"  >
+<table align="left">
 
 
 <thead>
-<tr style="background-color:black;" align="center">
+<tr style="background-color:black;" align="center" >
 
-      <th  scope="col" style="padding:20px; font-size:18px; color:white;">Doctor name</th>
-      <th scope="col"style="padding:20px;font-size:18px; color:white;">Phone</th>
-      <th scope="col"style="padding:20px;font-size:18px; color:white;">Speciality</th>
-      <th scope="col"style="padding:20px;font-size:18px; color:white;">Image</th>
-      <th scope="col"style="padding:20px;font-size:18px; color:white;">Delete</th>
-      <th scope="col"style="padding:20px;font-size:18px; color:white;">Update</th>
+      <th  style="padding:8px;font-size:15px; color:white;">Holders name</th>
+      <th style="padding:8px;font-size:15px; color:white;">Email</th>
+      <th style="padding:8px;font-size:15px; color:white;">Doctor name</th>
+      <th style="padding:8px;font-size:15px; color:white;">Phone</th>
+      <th style="padding:8px;font-size:15px; color:white;">Date</th>
+      <th style="padding:8px;font-size:15px; color:white;">patients details</th>
+      <th  style="padding:8px;font-size:15px; color:white;">Status</th>
+      <th  style="padding:8px;font-size:15px; color:white;">Approved</th>
+      <th  style="padding:8px;font-size:15px; color:white;">Canceled</th>
+      <th  style="padding:8px;font-size:15px; color:white;">Send Mail</th>
     </tr >
-@foreach($data as $doctor)
-    <tr style="background-color:black;" align="center">
-<td  scope="col" style="padding:20px;font-size:15px;color:white;">{{$doctor->name}}</td>
-      <td scope="col"style="padding:20px;font-size:15px;color:white;">{{$doctor->phone}}</td>
-      <td scope="col"style="padding:20px;font-size:15px;color:white;">{{$doctor->speciality}}</td>
-      <td scope="col"style="padding:20px;font-size:15px;color:white;"><img height="300px" width="300px" src="doctorimage/{{$doctor->image}}"></td>
-      <td scope="col"style="padding:20px;font-size:15px;color:white;"><a class="btn btn-danger"  onclick="return confirm('are u sure to delete?')" href="{{url('deletedoctor',$doctor->id)}}">Delete</a></td>
-      <td scope="col"style="padding:20px;font-size:15px;color:white;"><a class="btn btn-primary" href="{{url('updatedoctor',$doctor->id)}}">Update</a></td>
+    </thead>
+@foreach($data as $appoint)
+    <tr style="background-color:powderblue;" align="center">
+<td   style="padding:8px;font-size:12px;color:black;">{{$appoint->name}}</td>
+      <td style="padding:8px;font-size:12px;color:black;">{{$appoint->email}}</td>
+      <td style="padding:8px;font-size:12px;color:black;">{{$appoint->doctor}}</td>
+      <td style="padding:8px;font-size:12px;color:black;">{{$appoint->phone}}</td>
+      <td style="padding:8px;font-size:12px;color:black;">{{$appoint->date}}</td>
+      <td style="padding:8px;font-size:12px;color:black;">{{$appoint->details}}</td>
+      <td style="padding:8px;font-size:12px;color:black;">{{$appoint->status}}</td>
+     
+      <td style="padding:8px;font-size:12px;color:black;"><a class="btn btn-danger"   href="{{url('approved',$appoint->id)}}">Approved</a></td>
+      <td style="padding:8px;font-size:12px;color:black;"><a class="btn btn-primary" onclick="return confirm('are u sure to cancel?')" href="{{url('canceled',$appoint->id)}}">Canceled</a></td>
       
-
+      <td style="padding:8px;font-size:12px;color:black;"><a class="btn btn-primary"   href="{{url('emailview',$appoint->id)}}">Send Mail</a></td>
 
 
       </tr >
 @endforeach
-    </div>
-    </thead>
+   
+    
 </table>
 
 </div>
-
+</div>
         <!-- partial -->
        
     <!-- container-scroller -->

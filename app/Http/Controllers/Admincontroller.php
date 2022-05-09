@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Doctor;
+use App\Models\Patients_info;
 use App\Models\Medical_services;
 use App\Models\Available;
+use Notification;
+use App\Notifications\SendEmailNotification;
 
 class Admincontroller extends Controller
 {
@@ -56,8 +59,14 @@ return redirect()->back();
 }
 public function showappointment() 
 {  
-   $data=doctor::all();
+   $data=patients_info::all();
    return view('admin.showappointment',compact('data'));
+    
+}
+public function showdoctor() 
+{  
+   $data=doctor::all();
+   return view('admin.showdoctor',compact('data'));
     
 }
 public function deletedoctor($id) {
@@ -170,4 +179,43 @@ public function deletehospital($id) {
          return redirect()->back();
       }
 
+      public function approved($id) {
+         $data=patients_info::find($id);
+         $data->status='approved';
+         $data->save();
+         return redirect()->back();
+         }
+
+
+         public function canceled($id) {
+            $data=patients_info::find($id);
+            $data->status='Canceled';
+            $data->save();
+            return redirect()->back();
+            }
+            public function emailview($id){
+
+
+               $data=patients_info::find($id);
+
+               return view('admin.email_view',compact('data'));
+            }
+
+
+      public function sendemail(Request $request,$id)
+      {
+         $data=patients_info::find($id);
+
+         $details=[
+                  'greeting'=> $request->greeting,
+                  'body'=>$request->body,
+                  'actiontext'=>$request->actiontext,
+                  'actionurl'=>$request->actionurl,
+                  'endpart'=>$request->endpart
+         ];
+
+         Notification::send($data,new SendEmailNotification($details));
+
+         return redirect()->back();
+      }
 }

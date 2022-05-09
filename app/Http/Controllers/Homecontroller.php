@@ -10,6 +10,7 @@ use App\Models\Patients_info;
 use App\Models\Medical_services;
 use App\Models\Available;
 
+
 class Homecontroller extends Controller
 {
     public function redirect()
@@ -111,7 +112,19 @@ public function show_3(){
 
    return view('user.available_hospital',['available_hospital'=>$data]);
 }
+
+  
+    
 } 
+
+
+
+
+
+
+
+
+ 
 
 
 

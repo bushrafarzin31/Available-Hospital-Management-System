@@ -53,7 +53,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light shadow-sm" style="background-color:#6D7B8D;color:white;">
       <div class="container">
-        <a class="navbar-brand"  href="#"><span class="text-primary" style="color:#7F525D;" >Covid</span>-Care</a>
+        <a class="navbar-brand"  href="{{url('/')}}"><span class="text-primary" style="color:#7F525D;" >Covid</span>-Care</a>
         <form action="#">
           <div class="input-group input-navbar">
             <div class="input-group-prepend">
@@ -70,7 +70,7 @@
         <div class="collapse navbar-collapse" id="navbarSupport">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active ">
-              <a class="nav-link" style="color:white;" href="index.html">Home</a>
+              <a class="nav-link" style="color:white;" href="{{url('/')}}">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" style="color:white;"href="{{url('available_hospital')}}">Available Hospital</a>
@@ -82,7 +82,7 @@
               <a class="nav-link"  style="color:white;"href="{{url('patients_info')}}">Patients Info</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" style="color:white;" href="contact.html">Contact</a>
+              <a class="nav-link" style="color:white;" href="{{url('contact-us')}}">Contact</a>
             </li>
             <!-- Authentication -->
             @if(Route::has('login'))

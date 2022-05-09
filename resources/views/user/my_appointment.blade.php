@@ -51,7 +51,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light shadow-sm" style="background-color:#6D7B8D;color:white;">
       <div class="container">
-        <a class="navbar-brand" href="#"><span class="text-primary" style="color:white;">Covid</span>-Care</a>
+        <a class="navbar-brand" href="{{url('/')}}"><span class="text-primary" style="color:white;">Covid</span>-Care</a>
 
         <form action="#">
           <div class="input-group input-navbar">
@@ -69,10 +69,10 @@
         <div class="collapse navbar-collapse" id="navbarSupport">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" style="color:white;"href="{{url('home')}}">Home</a>
+              <a class="nav-link" style="color:white;"href="{{url('/')}}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" style="color:white;" href="about.html">Available Hospital</a>
+              <a class="nav-link" style="color:white;" href="{{url('available_hospital')}}">Available Hospital</a>
             </li>
             <li class="nav-item">
               <a class="nav-link"style="color:white;" href="{{url('medical_services')}}">Medical Services</a>
@@ -122,23 +122,24 @@
 <thead>
 <tr style="background-color:black;" align="center">
       
-      <th  scope="col" style="padding:10px;font-size:20px;color:white;">Phone</th>
-      <th scope="col"style="padding:10px;font-size:20px;color:white;">Doctor</th>
-      <th scope="col"style="padding:10px;font-size:20px;color:white;">Date</th>
-      <th scope="col"style="padding:10px;font-size:20px;color:white;">Details</th>
-      <th scope="col"style="padding:10px;font-size:20px;color:white;">Status</th>
-      <th scope="col"style="padding:10px;font-size:20px;color:white;">Cancel Appointment</th>
+      <th  scope="col" style="padding:10px;font-size:18px;color:white;">Phone</th>
+      <th scope="col"style="padding:10px;font-size:18px;color:white;">Doctor</th>
+      <th scope="col"style="padding:10px;font-size:18px;color:white;">Date</th>
+      <th scope="col"style="padding:10px;font-size:18px;color:white;">Details</th>
+      <th scope="col"style="padding:10px;font-size:18px;color:white;">Status</th>
+      <th scope="col"style="padding:10px;font-size:18px;color:white;">Cancel Appointment</th>
+      
     </tr >
     </thead>
     @foreach($patients_info as $patients_infos)
     <tr>
       
-      <td scope="col" >{{$patients_infos['phone']}}</td>
-      <td scope="col">{{$patients_infos['doctor']}}</td>
-      <td scope="col">{{$patients_infos['date']}}</td>
-      <td scope="col">{{$patients_infos['details']}}</td>
-      <td scope="col">{{$patients_infos['status']}}</td>
-      <td scope="col"><a class=" bt btn-danger"  onclick="return confirm('are u sure to delete?')" href="{{url('cancel_appoint', $patients_infos  ->id)}}">Cancel</a></td>
+      <td scope="col" style="padding:10px;font-size:15px;color:black;">{{$patients_infos['phone']}}</td>
+      <td scope="col"style="padding:10px;font-size:15px;color:black;">{{$patients_infos['doctor']}}</td>
+      <td scope="col"style="padding:10px;font-size:15px;color:black;">{{$patients_infos['date']}}</td>
+      <td scope="col"style="padding:10px;font-size:15px;color:black;">{{$patients_infos['details']}}</td>
+      <td scope="col"style="padding:10px;font-size:15px;color:black;">{{$patients_infos['status']}}</td>
+      <td scope="col"style="padding:10px;font-size:15px;color:black;"><a class=" bt btn-danger"  onclick="return confirm('are u sure to delete?')" href="{{url('cancel_appoint', $patients_infos  ->id)}}">Cancel</a></td>
       </tr> 
       @endforeach
 </table>

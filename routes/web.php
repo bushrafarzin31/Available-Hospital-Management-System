@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,7 @@ use App\Http\Controllers\AdminController;
 
 Route::get('/',[HomeController::class,'index']);
 
-Route::get('/home',[HomeController::class,'redirect']);
+Route::get('/home',[HomeController::class,'redirect'])->middleware('auth','verified');
 
 Route::middleware([
     'auth:sanctum',
@@ -45,12 +46,16 @@ Route::post('/upload_1_medical_services',[AdminController::class,'upload_1']);
 Route::get('/medical_services',[HomeController::class,'show']);
 
 Route::get('/doctor',[HomeController::class,'show_1']);
+Route::get('/showappointment',[AdminController::class,'showappointment']);
 
 Route::get('/myappointment',[HomeController::class,'myappointment']);
 
 Route::get('/cancel_appoint/{id}',[HomeController::class,'cancel_appoint']);
+Route::get('/approved/{id}',[AdminController::class,'approved']);
 
-Route::get('/showappointment',[AdminController::class,'showappointment']);
+Route::get('/canceled/{id}',[AdminController::class,'canceled']);
+
+Route::get('/showdoctor',[AdminController::class,'showdoctor']);
 
 Route::get('/deletedoctor/{id}',[AdminController::class,'deletedoctor']);
 
@@ -78,3 +83,9 @@ Route::get('/deleteservice/{id}',[AdminController::class,'deleteservice']);
 Route::get('/updateservice/{id}',[AdminController::class,'updateservice']);
 
 Route::post ('/editservice/{id}',[AdminController::class,'editservice']);
+
+Route::get('/emailview/{id}',[AdminController::class,'emailview']);
+Route::post ('/sendemail/{id}',[AdminController::class,'sendemail']);
+
+Route::get ('/contact-us',[ContactController::class,'contact']);
+Route::post ('/send-message',[ContactController::class,'sendEmail'])->name('contact.send');
